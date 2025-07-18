@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
+    public Canvas levCompCanv;
     private int playerLevel;
     public GameObject player;
-    public GameObject zombie1;
-    public GameObject zombie2;  
-    public GameObject zombie3;
-    public GameObject zombie4;
+    public GameObject zombieBase;
+    public GameObject zombieHealth;  
+    public GameObject zombieSpeed;
+    public GameObject zombieBoss;
     public Vector3[] spawnLoc;
     public PlayerInteraction playerInteraction;
 
@@ -20,7 +21,7 @@ public class GameplayManager : MonoBehaviour
 
     public void RoundOver()
     {
-        print("RoundOver");
+        levCompCanv.gameObject.SetActive(true);
     }
 
     //##################################################
@@ -28,20 +29,26 @@ public class GameplayManager : MonoBehaviour
     
     public void spawnZombs()
     {
+        int P_level= PlayerPrefs.GetInt("Level");
         zombieNumber = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            if (spawnLoc.Length > 0)
-            {
-                int randomIndex = Random.Range(0, spawnLoc.Length);
 
-                Instantiate(zombie1, spawnLoc[randomIndex], Quaternion.identity);
-                zombieNumber++;
-            }
-            else
-            {
-                Debug.LogWarning("spawnLoc array is empty!");
-            }
+        if (P_level == 1)
+        {
+            spawnZomb(zombieBase);
         }
+        if (P_level == 2)
+        {
+            spawnZomb(zombieBase);
+            spawnZomb(zombieHealth);
+            spawnZomb(zombieSpeed);
+            spawnZomb(zombieSpeed);
+        }
+
+    }
+
+    private void spawnZomb(GameObject zomb)
+    {
+        Instantiate(zomb, spawnLoc[Random.Range(0, spawnLoc.Length)], Quaternion.identity);
+        zombieNumber++;
     }
 }

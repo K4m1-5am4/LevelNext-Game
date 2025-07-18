@@ -5,7 +5,8 @@ public class PlayerInteraction : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public int playerLevel = 1;
+    public int playerLevel;
+
 
     private int zombieNumber;
 
@@ -13,11 +14,26 @@ public class PlayerInteraction : MonoBehaviour
     public GameplayManager gameplayManager;
     private void Start()
     {
+        playerLevel = PlayerPrefs.GetInt("Level",1);
         currentHealth = maxHealth;
         Application.targetFrameRate = 120;
         healthbar.setmaxHealth(maxHealth);
     }
-    
+
+    private void Update()
+    {
+        changeLevel();
+    }
+
+    private void changeLevel()
+    {
+        if (Input.GetKey(KeyCode.T))
+        {
+            PlayerPrefs.SetInt("Level", 1);
+            playerLevel= PlayerPrefs.GetInt("Level");
+        }
+    }
+
     public void roundStart()
     {
         zombieNumber=gameplayManager.zombieNumber;
@@ -35,6 +51,10 @@ public class PlayerInteraction : MonoBehaviour
         if(zombieNumber <= 0)
         {
             gameplayManager.RoundOver();
+            int curLev = PlayerPrefs.GetInt("Level");
+            int newlev = curLev + 1;
+            PlayerPrefs.SetInt("Level", newlev);
+            playerLevel= PlayerPrefs.GetInt("Level");
         }
     }
 
