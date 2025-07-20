@@ -32,10 +32,6 @@ public class MovementMain : MonoBehaviour
         m_moveAction = InputSystem.actions.FindAction("Move");
         m_shootAction = InputSystem.actions.FindAction("Shoot");
     }
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -73,5 +69,11 @@ public class MovementMain : MonoBehaviour
         }
     }
 
-    
+    public void checkandsetSpeed()
+    {
+        int k = PlayerPrefs.GetInt("S_Lvl", 1);
+        moveSpeed = Mathf.Clamp(k, 1, 10);
+    }
+
+
 }

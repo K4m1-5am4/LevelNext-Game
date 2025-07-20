@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour
     {
         StartCoroutine(destroy_self());
         bulletDamage = PlayerPrefs.GetInt("bulletDamage", 10);
+        checkandsetDMG();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,6 +29,11 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate(0,0,speedBullet*Time.deltaTime);
+    }
+    public void checkandsetDMG() { 
+        int k = PlayerPrefs.GetInt("A_Lvl", 1);
+        bulletDamage = k * 10;
+        print(bulletDamage);
     }
 
     IEnumerator destroy_self()

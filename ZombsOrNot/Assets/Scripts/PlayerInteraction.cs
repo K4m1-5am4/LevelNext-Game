@@ -44,66 +44,10 @@ public class PlayerInteraction : MonoBehaviour
     private void checkandsetHealth()
     {
         int k = PlayerPrefs.GetInt("H_Lvl", 1);
-        if (k == 1)
-        {
-            maxHealth = 100;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 2)
-        {
-            maxHealth = 200;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 3)
-        {
-            maxHealth = 300;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 4)
-        {
-            maxHealth = 400;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 5)
-        {
-            maxHealth = 500;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 6)
-        {
-            maxHealth = 600;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 7)
-        {
-            maxHealth = 700;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 8)
-        {
-            maxHealth = 800;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 9)
-        {
-            maxHealth = 900;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
-        if (k == 10)
-        {
-            maxHealth = 1000;
-            currentHealth = maxHealth;
-            healthbar.setmaxHealth(maxHealth);
-        }
+        maxHealth = k * 100;
+        currentHealth = maxHealth; 
+        healthbar.setmaxHealth(maxHealth);
+    
     }
 
     public void takeDmg(int dmg)

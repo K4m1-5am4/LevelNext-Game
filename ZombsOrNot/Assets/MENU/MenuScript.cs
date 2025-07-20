@@ -9,10 +9,12 @@ public class MenuScript : MonoBehaviour
     public Canvas ShopCanv;
     public GameplayManager gameManager;
     public PlayerInteraction playerInteraction;
+    public MovementMain playerMovement;
 
     private void Start()
     {
         playerInteraction = player.GetComponent<PlayerInteraction>();
+        playerMovement = player.GetComponent<MovementMain>();
     }
     private void Update()
     {
@@ -26,8 +28,10 @@ public class MenuScript : MonoBehaviour
 
     public void startGame()
     {
+        playerMovement.checkandsetSpeed();
         gameManager.spawnZombs();
         playerInteraction.roundStart();
         gameObject.SetActive(false);
     }
+
 }
