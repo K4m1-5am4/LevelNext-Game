@@ -34,7 +34,7 @@ public class MovementMain : MonoBehaviour
     }
     private void Start()
     {
-        moveSpeed = PlayerPrefs.GetFloat("pSpeed", 1f);
+
     }
 
     private void Update()
