@@ -5,11 +5,12 @@ public class BulletScript : MonoBehaviour
 {
     public float speedBullet = 1f;
     public float timeToDestroy=5f;
-    public int bulletDamage = 10;
+    public int bulletDamage;
 
     private void Start()
     {
         StartCoroutine(destroy_self());
+        bulletDamage = PlayerPrefs.GetInt("bulletDamage", 10);
     }
 
     private void OnTriggerEnter(Collider other)

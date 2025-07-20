@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
     public int playerLevel;
+    public CharacterController characterController;
 
 
     private int zombieNumber;
@@ -15,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         playerLevel = PlayerPrefs.GetInt("Level",1);
+        maxHealth = PlayerPrefs.GetInt("Health", 100);
         currentHealth = maxHealth;
         Application.targetFrameRate = 120;
         healthbar.setmaxHealth(maxHealth);
@@ -55,7 +57,15 @@ public class PlayerInteraction : MonoBehaviour
             int newlev = curLev + 1;
             PlayerPrefs.SetInt("Level", newlev);
             playerLevel= PlayerPrefs.GetInt("Level");
+            currentHealth = maxHealth;
+            healthbar.setHealth(currentHealth);
         }
+    }
+    public void resetPosition()
+    {
+        characterController.enabled = false;   
+        transform.position = new Vector3(0, 0.1f, -3);
+        characterController.enabled = true;
     }
 
 }

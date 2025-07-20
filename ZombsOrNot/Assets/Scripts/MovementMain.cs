@@ -7,7 +7,7 @@ public class MovementMain : MonoBehaviour
     public CharacterController characterController;
     public InputActionAsset InputActions;
 
-    public float moveSpeed = 1f;     
+    public float moveSpeed;     
     public float rotationSpeed = 10f;
 
     private InputAction m_moveAction;
@@ -31,6 +31,10 @@ public class MovementMain : MonoBehaviour
     {
         m_moveAction = InputSystem.actions.FindAction("Move");
         m_shootAction = InputSystem.actions.FindAction("Shoot");
+    }
+    private void Start()
+    {
+        moveSpeed = PlayerPrefs.GetFloat("pSpeed", 1f);
     }
 
     private void Update()

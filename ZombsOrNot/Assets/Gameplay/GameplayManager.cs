@@ -12,16 +12,21 @@ public class GameplayManager : MonoBehaviour
     public Vector3[] spawnLoc;
     public PlayerInteraction playerInteraction;
 
+    public int creds;
+
     public int zombieNumber;
     private void Start()
     {
         playerLevel = player.GetComponent<PlayerInteraction>().playerLevel;
         playerInteraction = player.GetComponent<PlayerInteraction>();
+        creds = PlayerPrefs.GetInt("Creds", 100);
     }
 
     public void RoundOver()
     {
         levCompCanv.gameObject.SetActive(true);
+        playerInteraction.resetPosition();
+        
     }
 
     //##################################################
