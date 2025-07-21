@@ -8,6 +8,8 @@ public class PlayerInteraction : MonoBehaviour
     public int playerLevel;
     public CharacterController characterController;
 
+    public Canvas pDiedCanv;
+
 
     private int zombieNumber;
 
@@ -52,8 +54,26 @@ public class PlayerInteraction : MonoBehaviour
 
     public void takeDmg(int dmg)
     {
-        currentHealth -= dmg;   
-        healthbar.setHealth(currentHealth);  
+        if (currentHealth > 0)
+        {
+            currentHealth -= dmg;
+            healthbar.setHealth(currentHealth);
+        }
+        else
+        {
+            playerDied();
+        }
+    }
+
+    public void playerDied()
+    {
+        GameObject[] objectsToDestroy = GameObject.FindGameObjectsWithTag("Zombie");
+        foreach (GameObject obj in objectsToDestroy)
+        {
+            Destroy(obj);
+        }
+        pDiedCanv.gameObject.SetActive(true);
+        resetPosition();
     }
 
     public void killEnemy()
@@ -66,14 +86,14 @@ public class PlayerInteraction : MonoBehaviour
             int newlev = curLev + 1;
             PlayerPrefs.SetInt("Level", newlev);
             playerLevel= PlayerPrefs.GetInt("Level");
-            currentHealth = maxHealth;
-            healthbar.setHealth(currentHealth);
         }
     }
     public void resetPosition()
     {
         characterController.enabled = false;   
         transform.position = new Vector3(0, 0.1f, -3);
+        currentHealth = maxHealth;
+        healthbar.setHealth(currentHealth);
         characterController.enabled = true;
     }
 

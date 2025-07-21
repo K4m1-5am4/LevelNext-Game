@@ -6,6 +6,7 @@ public class MenuScript : MonoBehaviour
 {
     public GameObject player;
     public TMP_Text levelText;
+    public TMP_Text credsCount;
     public Canvas ShopCanv;
     public GameplayManager gameManager;
     public PlayerInteraction playerInteraction;
@@ -15,6 +16,11 @@ public class MenuScript : MonoBehaviour
     {
         playerInteraction = player.GetComponent<PlayerInteraction>();
         playerMovement = player.GetComponent<MovementMain>();
+    }
+
+    private void OnEnable()
+    {
+        credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
     }
     private void Update()
     {
