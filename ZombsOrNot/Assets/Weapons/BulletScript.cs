@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.Play("GunShoot");
         StartCoroutine(destroy_self());
         bulletDamage = PlayerPrefs.GetInt("bulletDamage", 10);
         checkandsetDMG();

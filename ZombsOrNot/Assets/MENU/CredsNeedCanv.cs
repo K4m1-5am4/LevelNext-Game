@@ -6,6 +6,7 @@ public class CredsNeedCanv : MonoBehaviour
 
     public void closeCredNeeded()
     {
+        AudioManager.Instance.Play("Menu");
         Homescreen.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }

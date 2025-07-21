@@ -58,6 +58,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentHealth -= dmg;
             healthbar.setHealth(currentHealth);
+            AudioManager.Instance.Play("PlayerHit");
         }
         else
         {

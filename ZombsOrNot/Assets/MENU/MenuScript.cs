@@ -29,12 +29,14 @@ public class MenuScript : MonoBehaviour
     }
     public void openShop()
     {
+        AudioManager.Instance.Play("Menu");
         ShopCanv.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 
     public void startGame()
     {
+        AudioManager.Instance.Play("Menu");
         playerMovement.checkandsetSpeed();
         gameManager.spawnZombs();
         playerInteraction.roundStart();
@@ -42,6 +44,7 @@ public class MenuScript : MonoBehaviour
     }
     public void credsNeeded()
     {
+        AudioManager.Instance.Play("Menu");
         credsN.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }

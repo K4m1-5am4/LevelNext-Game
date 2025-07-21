@@ -7,11 +7,13 @@ public class LevelComp : MonoBehaviour
 
     public void closeScreen()
     {
+        AudioManager.Instance.Play("Menu");
         menuCanv.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
     public void openShop()
     {
+        AudioManager.Instance.Play("Menu");
         ShopCanv.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }

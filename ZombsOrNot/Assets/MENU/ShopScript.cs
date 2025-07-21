@@ -35,6 +35,7 @@ public class ShopScript : MonoBehaviour
     }
     public void closeShop()
     {
+        AudioManager.Instance.Play("Menu");
         MenuCanvas.gameObject.SetActive(true);
         gameObject.SetActive(false);    
     }
@@ -93,6 +94,7 @@ public class ShopScript : MonoBehaviour
     }
     public void credsNeeded()
     {
+        AudioManager.Instance.Play("Menu");
         credsN.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
