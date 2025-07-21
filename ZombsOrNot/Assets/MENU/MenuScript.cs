@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
     public TMP_Text levelText;
     public TMP_Text credsCount;
     public Canvas ShopCanv;
+    public Canvas credsN;
     public GameplayManager gameManager;
     public PlayerInteraction playerInteraction;
     public MovementMain playerMovement;
@@ -37,6 +38,11 @@ public class MenuScript : MonoBehaviour
         playerMovement.checkandsetSpeed();
         gameManager.spawnZombs();
         playerInteraction.roundStart();
+        gameObject.SetActive(false);
+    }
+    public void credsNeeded()
+    {
+        credsN.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 

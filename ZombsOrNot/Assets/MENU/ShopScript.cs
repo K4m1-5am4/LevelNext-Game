@@ -5,7 +5,7 @@ public class ShopScript : MonoBehaviour
 {
     public GameObject player;
     public Canvas MenuCanvas;
-
+    public Canvas credsN;
     public TMP_Text credsCount;
     public TMP_Text HLevel;
     public TMP_Text SLevel;
@@ -52,7 +52,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            print("NOT ENOUGH CREDS::");
+            credsNeeded();
         }
         
     } 
@@ -70,7 +70,7 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            print("NOT ENOUGH CREDS::");
+            credsNeeded();
         }
     }
 
@@ -87,8 +87,13 @@ public class ShopScript : MonoBehaviour
         }
         else
         {
-            print("NOT ENOUGH CREDS::");
+            credsNeeded();
         }
 
+    }
+    public void credsNeeded()
+    {
+        credsN.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
