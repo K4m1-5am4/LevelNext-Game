@@ -46,6 +46,7 @@ public class ZombieMain : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            AudioManager.Instance.Play("ZombDed");
             playerInteract.killEnemy();
             Destroy(gameObject);
         }
@@ -70,6 +71,7 @@ public class ZombieMain : MonoBehaviour
     }
     public void DealDamageZomb(int dmg)
     {
+        AudioManager.Instance.Play("ZombDmg");
         currentHealth -= dmg;
         healthbar.setHealth(currentHealth);
     }

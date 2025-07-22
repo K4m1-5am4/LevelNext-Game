@@ -271,7 +271,31 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Menu
-    clip: {fileID: 8300000, guid: f62cb915eeabe274e8a63c7a80cbb9b7, type: 3}
+    clip: {fileID: 8300000, guid: 724dd16826eda6448bc9f5c62e3ecef4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Over
+    clip: {fileID: 8300000, guid: d3ecf70f9a7d9cd45ad42b4a1ce5951a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: c3953ae94ea8914448761aa7690ced1c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ZombDed
+    clip: {fileID: 8300000, guid: 1ee93424003575d45af433295d37a4da, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ZombDmg
+    clip: {fileID: 8300000, guid: e0e9da6b73107cb4da5ef1de965d09a4, type: 3}
     volume: 1
     pitch: 1
     loop: 0

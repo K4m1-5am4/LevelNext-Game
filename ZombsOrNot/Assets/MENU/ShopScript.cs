@@ -44,6 +44,7 @@ public class ShopScript : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Creds") >= cost && PlayerPrefs.GetInt("H_Lvl")<10)
         {
+            AudioManager.Instance.Play("Menu");
             int c = PlayerPrefs.GetInt("Creds");
             PlayerPrefs.SetInt("Creds", c - cost);
             credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
@@ -62,6 +63,7 @@ public class ShopScript : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Creds") >= cost && PlayerPrefs.GetInt("S_Lvl") < 10)
         {
+            AudioManager.Instance.Play("Menu");
             int c = PlayerPrefs.GetInt("Creds");
             PlayerPrefs.SetInt("Creds", c - cost);
             credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
@@ -79,6 +81,7 @@ public class ShopScript : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Creds") >= cost && PlayerPrefs.GetInt("A_Lvl") < 10)
         {
+            AudioManager.Instance.Play("Menu");
             int c = PlayerPrefs.GetInt("Creds");
             PlayerPrefs.SetInt("Creds", c - cost);
             credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();

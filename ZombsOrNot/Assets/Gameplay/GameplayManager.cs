@@ -24,6 +24,7 @@ public class GameplayManager : MonoBehaviour
 
     public void RoundOver()
     {
+        AudioManager.Instance.Play("Win");
         levCompCanv.gameObject.SetActive(true);
         playerInteraction.resetPosition();
         

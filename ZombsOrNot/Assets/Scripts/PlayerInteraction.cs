@@ -62,6 +62,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.Play("Over");
             playerDied();
         }
     }
