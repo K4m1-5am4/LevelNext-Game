@@ -17,6 +17,9 @@ public class PlayerInteraction : MonoBehaviour
     public GameplayManager gameplayManager;
     private void Start()
     {
+        //temp
+        PlayerPrefs.SetInt("Creds", 500);//delete line when publish
+        //temp
         playerLevel = PlayerPrefs.GetInt("Level",1);
         currentHealth = maxHealth;
         Application.targetFrameRate = 120;

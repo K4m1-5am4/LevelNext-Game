@@ -35,14 +35,22 @@ public class GameplayManager : MonoBehaviour
     
     public void spawnZombs()
     {
-        int P_level= PlayerPrefs.GetInt("Level");
+        int P_level= PlayerPrefs.GetInt("Level",1);
         zombieNumber = 0;
 
         if (P_level == 1)
         {
             spawnZomb(zombieBase);
+            spawnZomb(zombieBase);
         }
         if (P_level == 2)
+        {
+            spawnZomb(zombieBase);
+            spawnZomb(zombieBase);
+            spawnZomb(zombieBase);
+            spawnZomb(zombieBase);
+        }
+        if (P_level == 3)
         {
             spawnZomb(zombieBase);
             spawnZomb(zombieHealth);
