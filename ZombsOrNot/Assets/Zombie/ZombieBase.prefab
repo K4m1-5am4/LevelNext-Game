@@ -485,9 +485,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8714056399020786971}
+  - component: {fileID: 1300987032582577356}
   - component: {fileID: 8481205760689962844}
   - component: {fileID: 8289871590642823120}
-  - component: {fileID: 1300987032582577356}
   - component: {fileID: -1544376739329589072}
   m_Layer: 0
   m_Name: ZombieBase
@@ -514,6 +514,27 @@ Transform:
   - {fileID: 302982917025745052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1300987032582577356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488783503584085378}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.1036124, z: 1}
+  m_Center: {x: 0, y: 0.54819417, z: 0}
 --- !u!195 &8481205760689962844
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -554,27 +575,6 @@ MonoBehaviour:
   playerInteract: {fileID: 0}
   attackPower: 5
   attackCooldown: 0.5
---- !u!65 &1300987032582577356
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8488783503584085378}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.50361204, z: 1}
-  m_Center: {x: 0, y: 0.24819398, z: 0}
 --- !u!114 &-1544376739329589072
 MonoBehaviour:
   m_ObjectHideFlags: 0
