@@ -1,4 +1,4 @@
-using System;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,8 +16,14 @@ public class ZombieMain : MonoBehaviour
     public float attackCooldown = 1f;
     private float lastAttackTime = -Mathf.Infinity;
 
+    public float wobbleAmount = 0.2f; // How much to scale up/down
+    public float wobbleDuration = 0.3f; // How long the wobble lasts
+    private Vector3 originalScale;
+    private bool isWobbling = false;
+
     void Start()
     {
+        originalScale = transform.localScale;
         currentHealth = maxHealth;
         agent = GetComponent<NavMeshAgent>();
         healthbar.setmaxHealth(maxHealth);
@@ -34,7 +40,7 @@ public class ZombieMain : MonoBehaviour
 
     private void attackPlayer()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 1f &&
+        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f &&
         Time.time > lastAttackTime + attackCooldown)
         {
             playerInteract.takeDmg(attackPower);
@@ -74,5 +80,37 @@ public class ZombieMain : MonoBehaviour
         AudioManager.Instance.Play("ZombDmg");
         currentHealth -= dmg;
         healthbar.setHealth(currentHealth);
+
+        // Start the wobble effect
+        if (!isWobbling)
+        {
+            StartCoroutine(WobbleEffect());
+        }
+    }
+
+    private IEnumerator WobbleEffect()
+    {
+        isWobbling = true;
+
+        float timer = 0f;
+
+        while (timer < wobbleDuration)
+        {
+            // Calculate progress (0 to 1)
+            float progress = timer / wobbleDuration;
+
+            // Create a sine wave that goes from 0 to π (one full wobble)
+            float wobble = Mathf.Sin(progress * Mathf.PI) * wobbleAmount;
+
+            
+            transform.localScale = originalScale * (1 + wobble);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        
+        transform.localScale = originalScale;
+        isWobbling = false;
     }
 }

@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -15,8 +16,14 @@ public class PlayerInteraction : MonoBehaviour
 
     public HealthbarS healthbar;
     public GameplayManager gameplayManager;
+
+    public float wobbleAmount = 0.2f; // How much to scale up/down
+    public float wobbleDuration = 0.3f; // How long the wobble lasts
+    private Vector3 originalScale;
+    private bool isWobbling = false;
     private void Start()
     {
+        originalScale = transform.localScale;
         //temp
         PlayerPrefs.SetInt("Creds", 500);//delete line when publish
         //temp
@@ -62,12 +69,42 @@ public class PlayerInteraction : MonoBehaviour
             currentHealth -= dmg;
             healthbar.setHealth(currentHealth);
             AudioManager.Instance.Play("PlayerHit");
+
+            if (!isWobbling)
+            {
+                StartCoroutine(WobbleEffect());
+            }
         }
         else
         {
             AudioManager.Instance.Play("Over");
             playerDied();
         }
+    }
+    private IEnumerator WobbleEffect()
+    {
+        isWobbling = true;
+
+        float timer = 0f;
+
+        while (timer < wobbleDuration)
+        {
+            // Calculate progress (0 to 1)
+            float progress = timer / wobbleDuration;
+
+            // Create a sine wave that goes from 0 to π (one full wobble)
+            float wobble = Mathf.Sin(progress * Mathf.PI) * wobbleAmount;
+
+
+            transform.localScale = originalScale * (1 + wobble);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+
+        transform.localScale = originalScale;
+        isWobbling = false;
     }
 
     public void playerDied()
@@ -101,5 +138,7 @@ public class PlayerInteraction : MonoBehaviour
         healthbar.setHealth(currentHealth);
         characterController.enabled = true;
     }
+
+
 
 }

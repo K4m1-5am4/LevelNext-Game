@@ -8,7 +8,6 @@ public class ShopScript : MonoBehaviour
     public Canvas credsN;
     public TMP_Text credsCount;
     public TMP_Text HLevel;
-    public TMP_Text SLevel;
     public TMP_Text ALevel;
 
     private void Update()
@@ -21,7 +20,6 @@ public class ShopScript : MonoBehaviour
             PlayerPrefs.SetInt("A_Lvl", 1);
             credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
             HLevel.text = PlayerPrefs.GetInt("H_Lvl", 1).ToString();
-            SLevel.text = PlayerPrefs.GetInt("S_Lvl", 1).ToString();
             ALevel.text = PlayerPrefs.GetInt("A_Lvl", 1).ToString();
 
         }
@@ -30,7 +28,6 @@ public class ShopScript : MonoBehaviour
     {
         credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
         HLevel.text= PlayerPrefs.GetInt("H_Lvl", 1).ToString();
-        SLevel.text = PlayerPrefs.GetInt("S_Lvl", 1).ToString();
         ALevel.text = PlayerPrefs.GetInt("A_Lvl", 1).ToString();
     }
     public void closeShop()
@@ -58,24 +55,6 @@ public class ShopScript : MonoBehaviour
         }
         
     } 
-    
-    public void upgradeSpeed(int cost)
-    {
-        if (PlayerPrefs.GetInt("Creds") >= cost && PlayerPrefs.GetInt("S_Lvl") < 10)
-        {
-            AudioManager.Instance.Play("Menu");
-            int c = PlayerPrefs.GetInt("Creds");
-            PlayerPrefs.SetInt("Creds", c - cost);
-            credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
-            int k = PlayerPrefs.GetInt("S_Lvl", 1);
-            PlayerPrefs.SetInt("S_Lvl", k + 1);
-            SLevel.text = PlayerPrefs.GetInt("S_Lvl", 1).ToString();
-        }
-        else
-        {
-            credsNeeded();
-        }
-    }
 
     public void upgradeAttack(int cost)
     {

@@ -5764,7 +5764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &971113263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5865,7 +5865,6 @@ MonoBehaviour:
   credsN: {fileID: 1535434459}
   credsCount: {fileID: 1628727113}
   HLevel: {fileID: 1516258073}
-  SLevel: {fileID: 0}
   ALevel: {fileID: 943369704}
 --- !u!1 &971279646
 GameObject:
@@ -11358,7 +11357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2065734364
 MonoBehaviour:
   m_ObjectHideFlags: 0
