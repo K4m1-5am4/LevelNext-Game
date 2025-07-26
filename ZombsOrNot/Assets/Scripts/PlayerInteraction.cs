@@ -23,6 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool isWobbling = false;
     private void Start()
     {
+        PlayerPrefs.SetInt("started", 0);
         originalScale = transform.localScale;
         //temp
         PlayerPrefs.SetInt("Creds", 500);//delete line when publish
@@ -109,6 +110,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void playerDied()
     {
+        
         GameObject[] objectsToDestroy = GameObject.FindGameObjectsWithTag("Zombie");
         foreach (GameObject obj in objectsToDestroy)
         {
@@ -137,6 +139,7 @@ public class PlayerInteraction : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.setHealth(currentHealth);
         characterController.enabled = true;
+        PlayerPrefs.SetInt("started", 0);
     }
 
 

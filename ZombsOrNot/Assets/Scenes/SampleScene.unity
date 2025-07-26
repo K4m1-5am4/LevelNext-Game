@@ -12182,9 +12182,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
-    - target: {fileID: 2215772812780731932, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.0657
+    - target: {fileID: 3574862220810035967, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
+      propertyPath: fireRate
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4511370456017776482, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
       propertyPath: pDiedCanv
@@ -12194,18 +12194,6 @@ PrefabInstance:
       propertyPath: gameplayManager
       value: 
       objectReference: {fileID: 754506447}
-    - target: {fileID: 5826702627050502246, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826702627050502246, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826702627050502246, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.3999996
-      objectReference: {fileID: 0}
     - target: {fileID: 5834405776652578509, guid: befe029acdf18524bab92f8c0c49712f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

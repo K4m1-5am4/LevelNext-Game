@@ -36,6 +36,7 @@ public class MenuScript : MonoBehaviour
 
     public void startGame()
     {
+        PlayerPrefs.SetInt("started", 1);
         AudioManager.Instance.Play("Menu");
         playerMovement.checkandsetSpeed();
         gameManager.spawnZombs();
