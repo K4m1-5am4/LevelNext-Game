@@ -33,7 +33,7 @@ public class BulletScript : MonoBehaviour
     }
     public void checkandsetDMG() { 
         int k = PlayerPrefs.GetInt("A_Lvl", 1);
-        bulletDamage = k * 10;
+        bulletDamage = k * 2;
         print(bulletDamage);
     }
 

@@ -6,9 +6,10 @@ public class GameplayManager : MonoBehaviour
     private int playerLevel;
     public GameObject player;
     public GameObject zombieBase;
-    public GameObject zombieHealth;  
+    public GameObject zombieRapid;  
     public GameObject zombieSpeed;
-    public GameObject zombieBoss;
+    public GameObject zombieSpeedContact;
+    public GameObject zombieMissile;
     public Vector3[] spawnLoc;
     public PlayerInteraction playerInteraction;
 
@@ -47,14 +48,14 @@ public class GameplayManager : MonoBehaviour
         {
             spawnZomb(zombieBase);
             spawnZomb(zombieBase);
-            spawnZomb(zombieBase);
-            spawnZomb(zombieBase);
+            spawnZomb(zombieSpeedContact);
+            spawnZomb(zombieSpeedContact);
         }
         if (P_level == 3)
         {
-            spawnZomb(zombieBase);
-            spawnZomb(zombieHealth);
-            spawnZomb(zombieSpeed);
+            spawnZomb(zombieSpeedContact);
+            spawnZomb(zombieRapid);
+            spawnZomb(zombieMissile);
             spawnZomb(zombieSpeed);
         }
 

@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
     private void checkandsetHealth()
     {
         int k = PlayerPrefs.GetInt("H_Lvl", 1);
-        maxHealth = k * 100;
+        maxHealth = k * 25;
         currentHealth = maxHealth; 
         healthbar.setmaxHealth(maxHealth);
     
