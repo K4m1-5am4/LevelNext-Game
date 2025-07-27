@@ -78,7 +78,7 @@ public class MovementMain : MonoBehaviour
 
         if (m_moveAmt.magnitude > 0.1f)
         {
-
+            checkandsetSpeed();
             Vector3 moveDirection = new Vector3(m_moveAmt.x, 0, m_moveAmt.y).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
@@ -114,7 +114,26 @@ public class MovementMain : MonoBehaviour
     public void checkandsetSpeed()
     {
         int k = PlayerPrefs.GetInt("S_Lvl", 1);
-        moveSpeed = Mathf.Clamp(k, 1, 10);
+        if (k == 1)
+        {
+            moveSpeed = 3;
+        }
+        if (k == 2)
+        {
+            moveSpeed = 5;
+        }
+        if (k == 3)
+        {
+            moveSpeed = 7;
+        }
+        if (k == 4)
+        {
+            moveSpeed = 9;
+        }
+        if (k == 5)
+        {
+            moveSpeed = 10;
+        }
     }
 
 

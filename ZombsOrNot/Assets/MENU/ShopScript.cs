@@ -15,11 +15,11 @@ public class ShopScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.J))
         {
-            PlayerPrefs.SetInt("Creds",500);
+            PlayerPrefs.SetInt("Creds",0);
             PlayerPrefs.SetInt("H_Lvl", 1);
             PlayerPrefs.SetInt("S_Lvl", 1);
             PlayerPrefs.SetInt("A_Lvl", 1);
-            credsCount.text = PlayerPrefs.GetInt("Creds", 100).ToString();
+            credsCount.text = PlayerPrefs.GetInt("Creds", 0).ToString();
             HLevel.text = PlayerPrefs.GetInt("H_Lvl", 1).ToString();
             ALevel.text = PlayerPrefs.GetInt("A_Lvl", 1).ToString();
             SLevel.text = PlayerPrefs.GetInt("S_Lvl", 1).ToString();

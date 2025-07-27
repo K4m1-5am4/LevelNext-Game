@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 156381935233606177}
   - component: {fileID: 3022453752559298908}
   m_Layer: 0
-  m_Name: TankBullet
+  m_Name: TankBulletBIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110401935071482418}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000041723246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.17599998}
+  m_LocalScale: {x: 0.15599999, y: 0.15599999, z: 0.34319994}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4401892108842319983}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &-8495010098318882394
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e471dc43d67d2294f9b595ec50a32bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBullet: 10
+  speedBullet: 15
   timeToDestroy: 5
-  bulletDamage: 2
+  bulletDamage: 10
 --- !u!65 &3022453752559298908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96,8 +96,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2367511, y: 1, z: 1.2050456}
-  m_Center: {x: 4.1394703e-15, y: 0, z: 0.116967306}
+  m_Size: {x: 1.2367511, y: 1, z: 1.2094358}
+  m_Center: {x: 0, y: 0, z: 0.011635331}
 --- !u!1001 &4223269180014143364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,31 +116,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000008868593
+      value: 0.0000002175259
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000005960472
+      value: 0.0000019104054
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19918188
+      value: -0.35943836
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: -0.7071065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70710695
+      value: -0.7071072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000024886452
+      value: 0.000000052154057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000002528189
+      value: -0.000000043825878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f180eaee275d0041a07e9177ce79938, type: 3}
       propertyPath: m_Name

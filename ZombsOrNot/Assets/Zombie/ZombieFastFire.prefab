@@ -592,9 +592,9 @@ MonoBehaviour:
   tankBullet: {fileID: 2110401935071482418, guid: c29eabee1b2ae9f4d828a6028e17b499, type: 3}
   bulletDamage: 10
   player: {fileID: 0}
-  range: 5
+  range: 10
   bulletSpawnPoint: {fileID: 302982917025745052}
-  fireRate: 0.5
+  fireRate: 0.25
 --- !u!1001 &6160125284753417406
 PrefabInstance:
   m_ObjectHideFlags: 0

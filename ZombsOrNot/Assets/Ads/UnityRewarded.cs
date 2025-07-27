@@ -9,6 +9,8 @@ public class UnityRewarded : MonoBehaviour, IUnityAdsInitializationListener, IUn
     public string rewardedID = "";
     [SerializeField] bool _testMode = true;
 
+    public PlayerInteraction interaction;
+
     void Start()
     {
         InitializeAds();
@@ -38,12 +40,30 @@ public class UnityRewarded : MonoBehaviour, IUnityAdsInitializationListener, IUn
     {
         Advertisement.Load(rewardedID, this);
     }
+    public enum RewardType
+    {
+        Credits,
+        Revive,
+        // Add other reward types as needed
+    }
 
     public void OnUnityAdsAdLoaded(string adUnitId) { }
 
-    public void ShowAd()
+    private RewardType currentRewardType;
+
+    public void ShowAd(RewardType rewardType)
     {
+        currentRewardType = rewardType;
         Advertisement.Show(rewardedID, this);
+    }
+
+    public void showcredad()
+    {
+        ShowAd(RewardType.Credits);
+    }
+    public void showRevAd()
+    {
+        ShowAd(RewardType.Revive);
     }
 
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
@@ -51,7 +71,16 @@ public class UnityRewarded : MonoBehaviour, IUnityAdsInitializationListener, IUn
         if (adUnitId.Equals(rewardedID) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
-            PlayerPrefs.SetInt("Creds", PlayerPrefs.GetInt("Creds") + 50);
+
+            switch (currentRewardType)
+            {
+                case RewardType.Credits:
+                    PlayerPrefs.SetInt("Creds", PlayerPrefs.GetInt("Creds") + 100);
+                    break;
+                case RewardType.Revive:
+                    interaction.revPlayer();
+                    break;
+            }
         }
     }
 
